@@ -18,14 +18,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Run Tests and Generate Coverage') {
             steps {
-                sh 'mvn test'
-                sh 'mvn jacoco:report'
+                bat 'mvn test'
+                bat 'mvn jacoco:report'
             }
             post {
                 always {
